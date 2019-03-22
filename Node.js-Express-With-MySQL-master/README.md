@@ -1,6 +1,3 @@
-# Node.js-Express-With-MySQL
-This is a demo for node.je Express (ejs) with mysql
-　
 ## Slide
 [Currency-exchange-rate](https://docs.google.com/presentation/d/1bfU1t2odiI2lcHmc-haD1vzIMAkE-N-Iy2A_VfSLi5o/edit?fbclid=IwAR0NPpLwLnuGySG3_ZNU1uTZQuFJMU2rd1lxEPzrIHc3X6Gm16VlYmNZ-j4)
 
