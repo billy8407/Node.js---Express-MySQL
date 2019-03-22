@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+    function Edit(id) {
+        window.location.href = "/userEdit?id=" + id;
+    }
+
+    function Delete(id) {
+        var rs = confirm('Confirm to delete?');
+        if (rs) {
+            window.location.href = "/userDelete?id=" + id;
+        }
+    }
+
+    function Search() {
+
+        var date = document.getElementsByName('sdate')[0].value;
+        window.location.href = "/?user=" + date;;
+    }
+    </script>
+</head>
+
+<body>
+    <h1>貨幣匯率表</h1>
+    <div class="search">
+        <label>Date：</label>
+        <input type="text" name="sdate" value="<%=user  %>" placeholder="input the date">
+        <input type="button" name="sSearch" value="Search" class="btn" onclick="Search();">
+    </div>
+    <div class="control">
+        <input class="btn" type='submit' value='Add' onclick="javascript: location.href='add'">
+    </div>
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>date</th>
+            <th>USDtoTW</th>
+            <th>CNYtoTW</th>
+            <th>EURtoUSD</th>
+            <th>USDtoJPY</th>
+            <th>GBPtoUSD</th>
+            <th>AUDtoUSD</th>
+            <th>USDtoHKD</th>
+            <th>USDtoCNY</th>
+            <th>USDtoZAR</th>
+            <th>NZDtoUSD</th>
+        </tr>
+        <% for ( var i = 0 ; i < data.length ; i++){ %>
+            <tr>
+                <td>
+                    <%= data[i].id  %>
+                </td>
+                <td>
+                    <%= data[i].date  %>
+                </td>
+                <td>
+                    <%= data[i].USDtoTW  %>
+                </td>
+                <td>
+                    <%= data[i].CNYtoTW  %>
+                </td>
+                <td>
+                    <%= data[i].EURtoUSD  %>
+                </td>
+                <td>
+                    <%= data[i].USDtoJPY  %>
+                </td>
+                <td>
+                    <%= data[i].GBPtoUSD  %>
+                </td>
+                <td>
+                    <%= data[i].AUDtoUSD  %>
+                </td>
+                <td>
+                    <%= data[i].USDtoHKD  %>
+                </td>
+                <td>
+                    <%= data[i].USDtoCNY  %>
+                </td>
+                <td>
+                    <%= data[i].USDtoZAR  %>
+                </td>
+                <td>
+                    <%= data[i].NZDtoUSD  %>
+                </td>
+                <td>
+                    <input type="button" name="edit" value="Edit" class="btn" onclick="Edit('<%= data[i].id  %>');" />
+                    <input type="button" name="delete" value="Delete" class="btn" onclick="Delete('<%= data[i].id  %>');" />
+                </td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>

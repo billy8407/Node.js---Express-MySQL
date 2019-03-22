@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title></title>
+    <script type="text/javascript">
+    function Check() {
+
+        var a1 = document.getElementsByName('date')[0].value;
+        var a2 = document.getElementsByName('USDtoTW')[0].value;
+        var a3 = document.getElementsByName('CNYtoTW')[0].value;
+        var a4 = document.getElementsByName('EURtoUSD')[0].value;
+        var a5 = document.getElementsByName('USDtoJPY')[0].value;
+        var a6 = document.getElementsByName('GBPtoUSD')[0].value;
+        var a7 = document.getElementsByName('AUDtoUSD')[0].value;
+        var a8 = document.getElementsByName('USDtoHKD')[0].value;
+        var a9 = document.getElementsByName('USDtoCNY')[0].value;
+        var a10 = document.getElementsByName('USDtoZAR')[0].value;
+        var a11 = document.getElementsByName('NZDtoUSD')[0].value;
+        if (a1 && a2 && a3 && a4 && a5 && a6 && a7 && a8 && a9 && a10 && a11) {
+            return true;
+        }
+        alert('please input the info.');
+        return false;
+
+    }
+    </script>
+</head>
+
+<body>
+    <form name="editform" action="userEdit" method="post" accept-charset="utf-8" onSubmit="return Check();">
+        <h1>編輯貨幣匯率</h1>
+        <input type="hidden" name="id" value="<%=data[0].id  %>" />
+        <div class="row">
+            <label>date：</label>
+            <input type="text" name="date" placeholder="date" value="<%=data[0].date %>" readonly  />
+        </div>
+        <div class="row">
+            <label>USDtoTW：</label>
+            <input type="text" name="USDtoTW" placeholder="USDtoTW" value="<%=data[0].USDtoTW  %>"/>
+        </div>
+        <div class="row">
+            <label>CNYtoTW：</label>
+            <input type="text" name="CNYtoTW" placeholder="CNYtoTW" value="<%=data[0].CNYtoTW  %>"/>
+        </div>
+        <div class="row">
+            <label>EURtoUSD：</label>
+            <input type="text" name="EURtoUSD" placeholder="EURtoUSD" value="<%=data[0].EURtoUSD  %>"/>
+        </div>
+        <div class="row">
+            <label>USDtoJPY：</label>
+            <input type="text" name="USDtoJPY" placeholder="USDtoJPY" value="<%=data[0].USDtoJPY  %>"/>
+        </div>
+        <div class="row">
+            <label>GBPtoUSD：</label>
+            <input type="text" name="GBPtoUSD" placeholder="GBPtoUSD" value="<%=data[0].GBPtoUSD  %>"/>
+        </div>
+        <div class="row">
+            <label>AUDtoUSD：</label>
+            <input type="text" name="AUDtoUSD" placeholder="AUDtoUSD" value="<%=data[0].AUDtoUSD  %>"/>
+        </div>
+        <div class="row">
+            <label>USDtoHKD：</label>
+            <input type="text" name="USDtoHKD" placeholder="USDtoHKD" value="<%=data[0].USDtoHKD  %>"/>
+        </div>
+        <div class="row">
+            <label>USDtoCNY：</label>
+            <input type="text" name="USDtoCNY" placeholder="USDtoCNY" value="<%=data[0].USDtoCNY  %>"/>
+        </div>
+        <div class="row">
+            <label>USDtoZAR：</label>
+            <input type="text" name="USDtoZAR" placeholder="USDtoZAR" value="<%=data[0].USDtoZAR  %>" />
+        </div>
+        <div class="row">
+            <label>NZDtoUSD：</label>
+            <input type="text" name="NZDtoUSD" placeholder="NZDtoUSD" value="<%=data[0].NZDtoUSD  %>" />
+        </div>
+        <div class="row">
+            <input class="btn" type='submit' value='Submit'>
+            <input class="btn" type='reset' value='Reset'>
+            <input class="btn" type='button' value='Back' onclick="javascript: window.history.back();">
+        </div>
+    </form>
+</body>
+
+</html>
